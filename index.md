@@ -1,35 +1,39 @@
 ---
 ---
 
-# Lab Website Template
+# Mount Huaguo Lab
 
-[Lab Website Template](https://github.com/greenelab/lab-website-template) is an easy-to-use, flexible website template for [labs](https://www.greenelab.com/).
-Spend less time worrying about managing a website and citations, and more time running your lab.
+**花果山实验室**致力于前沿科研探索，推动学术创新与技术突破。
+
+我们的研究团队专注于解决重要的科学问题，产出高质量的学术成果。
 
 {%
   include button.html
-  type="docs"
-  link="https://greene-lab.gitbook.io/lab-website-template-docs"
+  link="research"
+  text="查看我们的论文"
+  icon="fa-solid fa-arrow-right"
+  flip=true
 %}
 {%
   include button.html
-  type="github"
-  text="On GitHub"
-  link="greenelab/lab-website-template"
+  link="team"
+  text="认识我们的团队"
+  icon="fa-solid fa-arrow-right"
+  flip=true
 %}
 
 {% include section.html %}
 
-## Highlights
+## 研究亮点
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+我们的研究涵盖多个前沿领域，发表了一系列高质量学术论文。
 
 {%
   include button.html
   link="research"
-  text="See our publications"
+  text="浏览全部论文"
   icon="fa-solid fa-arrow-right"
   flip=true
   style="bare"
@@ -41,18 +45,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
   include feature.html
   image="images/photo.jpg"
   link="research"
-  title="Our Research"
+  title="我们的研究"
   text=text
 %}
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+实验室承担多项重要研究项目，推动科技创新与学术进步。
 
 {%
   include button.html
   link="projects"
-  text="Browse our projects"
+  text="了解更多项目"
   icon="fa-solid fa-arrow-right"
   flip=true
   style="bare"
@@ -64,7 +68,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
   include feature.html
   image="images/photo.jpg"
   link="projects"
-  title="Our Projects"
+  title="研究项目"
   flip=true
   style="bare"
   text=text
@@ -72,12 +76,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+我们拥有一支优秀的科研团队，致力于解决重要的科学问题。
 
 {%
   include button.html
   link="team"
-  text="Meet our team"
+  text="认识团队成员"
   icon="fa-solid fa-arrow-right"
   flip=true
   style="bare"
@@ -89,6 +93,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
   include feature.html
   image="images/photo.jpg"
   link="team"
-  title="Our Team"
+  title="我们的团队"
   text=text
 %}
