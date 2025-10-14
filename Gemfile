@@ -1,12 +1,17 @@
 source "https://rubygems.org"
 
-# jekyll
-gem "jekyll", "~> 4.3"
+# ============================================================
+# Jekyll 核心依赖
+# ============================================================
+gem "jekyll", "~> 4.2.0"  # 降低版本以兼容旧 Ruby
 gem "webrick", "~> 1.7"
 
-gem "html-proofer", "~> 5.0"
+# html-proofer 需要 Ruby 3.1+，暂时注释掉
+# gem "html-proofer", "~> 5.0"
 
-# plugins
+# ============================================================
+# Jekyll 插件
+# ============================================================
 group :jekyll_plugins do
   gem "jekyll-spaceship"
   gem "jekyll-sitemap"
