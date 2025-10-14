@@ -1,23 +1,91 @@
+# ============================================================
+# 论文数据源配置文件
+# ============================================================
+# 
+# 这个文件用于手动添加和管理实验室的论文发表
+# 论文会自动按年份分组显示（2025、2024、2023...）
+#
+# ============================================================
+# 添加论文的方式
+# ============================================================
+#
+# 方式 1：使用 DOI 自动获取论文信息（推荐）
+# --------------------------------------------------
+# - id: doi:10.1234/example
+#   type: paper
+#   description: 论文的简短描述（可选）
+#   image: 论文配图URL（可选）
+#   tags:
+#     - 标签1
+#     - 标签2
+#
+# 方式 2：使用 PubMed ID
+# --------------------------------------------------
+# - id: pubmed:12345678
+#   type: paper
+#
+# 方式 3：完全手动填写
+# --------------------------------------------------
+# - id: manual-paper-2025
+#   type: paper
+#   title: "论文标题"
+#   authors:
+#     - 作者1
+#     - 作者2
+#   publisher: 发表期刊或会议
+#   date: 2025-01-15
+#   link: https://论文链接
+#   description: 论文描述
+#   image: 配图URL
+#   tags:
+#     - 机器学习
+#     - 计算机视觉
+#
+# ============================================================
+# 论文列表示例（请替换为你的实际论文）
+# ============================================================
+
+# --- 2025年论文示例 ---
+# - id: doi:10.xxxx/xxxxx
+#   type: paper
+#   description: 这篇论文的主要贡献是...
+#   tags:
+#     - 深度学习
+#     - 自然语言处理
+
+# --- 2024年论文示例 ---
+# - id: doi:10.yyyy/yyyyy
+#   type: paper
+#   description: 本研究提出了一种新的方法...
+#   tags:
+#     - 计算机视觉
+#     - 目标检测
+
+# --- 手动添加论文示例 ---
+# - id: example-paper-2025
+#   type: paper
+#   title: "示例论文标题"
+#   authors:
+#     - Jianwei Zheng
+#     - Jiangjiawei
+#   publisher: "顶级会议或期刊名称"
+#   date: 2025-03-20
+#   link: https://example.com/paper
+#   description: 这是一篇关于XXX的研究论文
+#   tags:
+#     - 人工智能
+#     - 机器学习
+
+# ============================================================
+# 下面添加你的实际论文
+# ============================================================
+# 复制上面的示例格式，在下方添加你的论文
+
 - id: doi:10.1371/journal.pcbi.1007128
   type: paper
-  description: Lorem ipsum _dolor_ **sit amet**, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  description: 示例论文 - 请替换为你的实际论文
   date: 2020-12-4
   image: https://journals.plos.org/ploscompbiol/article/figure/image?size=inline&id=info:doi/10.1371/journal.pcbi.1007128.g001&rev=2
-  buttons:
-    - type: manubot
-      link: https://greenelab.github.io/meta-review/
-    - type: source
-      text: Manuscript Source
-      link: https://github.com/greenelab/meta-review
-    - type: website
-      link: http://manubot.org/
   tags:
-    - open science
-    - collaboration
-  repo: greenelab/meta-review
-
-- id: doi:10.1016/j.csbj.2020.05.017
-  image: https://ars.els-cdn.com/content/image/1-s2.0-S2001037020302804-gr1.jpg
-
-- id: doi:10.7554/eLife.32822
-  image: https://iiif.elifesciences.org/lax:32822%2Felife-32822-fig8-v3.tif/full/863,/0/default.webp
+    - 开源科学
+    - 协作研究
