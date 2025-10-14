@@ -3,670 +3,373 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mount Huaguo Lab</title>
+    <title>Mount Huaguo Lab 🐵</title>
     <style>
-        * {
+        /* Basic styling for the layout */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            background-color: #f4f4f4;
+            color: #333;
         }
-        
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            line-height: 1.8;
-            color: #2c3e50;
-            background: #fafafa;
-        }
-        
-        /* ============================================================
-           Header - 极简优雅
-           ============================================================ */
         .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
             color: white;
-            padding: 80px 20px;
+            padding: 20px 0;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0 Q300,40 600,20 T1200,10 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.03)"/></svg>');
-            opacity: 0.5;
-        }
-        
         .header h1 {
-            font-size: 3.5em;
-            margin-bottom: 10px;
-            font-weight: 300;
-            letter-spacing: 2px;
-            position: relative;
-            z-index: 1;
+            margin: 0;
+            font-size: 2.5em;
         }
-        
-        /* ============================================================
-           Navigation - 现代简约
-           ============================================================ */
-        .nav {
-            background: white;
-            border-bottom: 1px solid #e8e8e8;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 0;
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 5px;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            text-align: center;
+            padding: 10px 0;
             position: sticky;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            z-index: 999;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
-        
-        .nav a {
-            color: #555;
-            text-decoration: none;
-            padding: 18px 35px;
+        .navbar a {
             display: inline-block;
-            transition: all 0.3s ease;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-size: 0.95em;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            border-bottom: 3px solid transparent;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 1.1em;
         }
-        
-        .nav a:hover,
-        .nav a.active {
-            background: #f8f9fa;
-            color: #2c3e50;
-            border-bottom-color: #3498db;
+        .navbar a:hover {
+            background-color: #575757;
         }
-        
-        /* ============================================================
-           Container - 宽松舒适
-           ============================================================ */
         .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 40px;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
         }
-        
         .section {
-            margin-bottom: 80px;
+            margin-bottom: 40px;
         }
-        
         .section h2 {
-            font-size: 2.2em;
-            margin-bottom: 35px;
-            font-weight: 300;
-            color: #2c3e50;
-            position: relative;
-            padding-bottom: 15px;
+            color: #3498db;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
         }
-        
-        .section h2::after {
-            content: '';
+        .news-item {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .news-item::before {
+            content: '•';
             position: absolute;
             left: 0;
-            bottom: 0;
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, #3498db, #2ecc71);
+            color: #3498db;
+            font-weight: bold;
+            font-size: 1.2em;
         }
-        
-        /* ============================================================
-           Recent News - 卡片式高级设计
-           ============================================================ */
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+        .year-group {
             margin-top: 30px;
         }
-        
-        .news-card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border-left: 4px solid #3498db;
-        }
-        
-        .news-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-        }
-        
-        .news-card .date {
-            font-size: 0.85em;
+        .year-group h3 {
             color: #3498db;
-            font-weight: 600;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        .pub-item {
             margin-bottom: 10px;
-            font-family: 'Courier New', monospace;
-        }
-        
-        .news-card .title {
-            font-size: 1.1em;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 8px;
-        }
-        
-        .news-card .venue {
-            color: #e74c3c;
-            font-weight: 600;
-            font-size: 0.9em;
-        }
-        
-        .news-card .description {
-            color: #666;
+            padding-left: 20px;
+            line-height: 1.75;
             font-size: 0.95em;
-            margin-top: 8px;
-            line-height: 1.6;
+            position: relative;
         }
-        
-        /* ============================================================
-           Publications - 专业学术风格
-           ============================================================ */
-        .year-section {
-            margin-bottom: 50px;
-        }
-        
-        .year-section h3 {
-            font-size: 1.8em;
+        .pub-item::before {
+            content: '•';
+            position: absolute;
+            left: 0;
             color: #3498db;
-            margin-bottom: 25px;
-            font-weight: 400;
-            border-bottom: 2px solid #ecf0f1;
-            padding-bottom: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
         }
-        
-        .publication {
-            margin-bottom: 18px;
-            padding: 15px 20px;
-            background: white;
-            border-radius: 8px;
-            border-left: 3px solid #ecf0f1;
-            transition: all 0.2s ease;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-size: 0.95em;
-            line-height: 1.7;
-        }
-        
-        .publication:hover {
-            border-left-color: #3498db;
-            background: #f8f9fa;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        
-        .publication strong {
-            font-weight: 600;
-            color: #2c3e50;
-        }
-        
-        .publication em {
-            color: #555;
+        .pub-item em {
+            color: #666;
             font-style: italic;
         }
+        .ccf-a { color: #e74c3c; font-weight: bold; } /* Red for CCF A */
+        .ccf-b { color: #e67e22; font-weight: bold; } /* Orange for CCF B */
+        .ccf-c { color: #27ae60; font-weight: bold; } /* Green for CCF C */
+        .highlight-hot { background-color: #ffeaa7; padding: 2px 5px; border-radius: 3px; }
+        .highlight-cited { background-color: #a2d9ff; padding: 2px 5px; border-radius: 3px; }
+        .highlight-award { background-color: #d0a2ff; padding: 2px 5px; border-radius: 3px; }
         
-        .ccf-a {
-            color: #e74c3c;
-            font-weight: 700;
-            background: #fee;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.85em;
+        .team-photo img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        
-        .ccf-b {
-            color: #f39c12;
-            font-weight: 700;
-            background: #fef5e7;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.85em;
+        .pi-bio-container {
+            background-color: #f9f9f9;
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
         }
-        
-        .ccf-c {
-            color: #27ae60;
-            font-weight: 600;
-            font-size: 0.85em;
+        .toggle-bio-button {
+            background: linear-gradient(to right, #8e44ad 0%, #9b59b6 100%);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-bottom: 15px;
+            transition: background 0.3s ease;
         }
-        
-        .highlight {
-            background: #fff9e6;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-weight: 600;
-            color: #d68910;
+        .toggle-bio-button:hover {
+            background: linear-gradient(to right, #9b59b6 0%, #8e44ad 100%);
         }
-        
-        /* ============================================================
-           Team - 照片墙设计
-           ============================================================ */
-        .team-photo-gallery {
-            margin-top: 30px;
+        .pi-bio-content {
+            display: none; /* Hidden by default */
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed #eee;
         }
-        
-        .team-photo-gallery img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-            transition: all 0.3s ease;
+        .pi-bio-content p {
+            margin-bottom: 10px;
         }
-        
-        .team-photo-gallery img:hover {
-            transform: scale(1.02);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+        .pi-bio-content strong {
+            color: #555;
         }
-        
-        /* ============================================================
-           Contact - 简洁信息卡
-           ============================================================ */
-        .contact-card {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            max-width: 600px;
+        .pi-bio-content ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding-left: 0;
         }
-        
-        .contact-card .contact-item {
-            padding: 15px 0;
-            border-bottom: 1px solid #ecf0f1;
-            display: flex;
-            align-items: center;
-            gap: 15px;
+        .pi-bio-content ul li {
+            margin-bottom: 5px;
         }
-        
-        .contact-card .contact-item:last-child {
-            border-bottom: none;
-        }
-        
-        .contact-card .icon {
-            font-size: 1.3em;
-            color: #3498db;
-        }
-        
-        .contact-card a {
-            color: #3498db;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .contact-card a:hover {
-            color: #2980b9;
-            text-decoration: underline;
-        }
-        
-        /* ============================================================
-           Footer
-           ============================================================ */
-        .footer {
-            background: #2c3e50;
-            color: #95a5a6;
+        .contact-info {
             text-align: center;
-            padding: 30px 20px;
-            margin-top: 80px;
+            font-size: 1.1em;
         }
-        
-        .footer p {
-            margin: 5px 0;
-            font-size: 0.9em;
+        .contact-info strong {
+            color: #3498db;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <div class="header">
-        <h1>Mount Huaguo Lab</h1>
+
+<div class="header">
+    <h1>Mount Huaguo Lab 🐵</h1>
+    <div class="subtitle">Advancing Frontier Research & Driving Innovation</div>
+</div>
+
+<div class="navbar">
+    <a href="#news">News</a>
+    <a href="#publications">Publications</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
+</div>
+
+<div class="container">
+    
+    <!-- Recent News -->
+    <div class="section" id="news">
+        <h2>Recent News</h2>
+        <div class="news-list">
+            <div class="news-item"><strong>2025.09</strong> - Prof. Jianwei Zheng selected as one of the World's Top 2% Scientists</div>
+        </div>
     </div>
     
-    <!-- Navigation -->
-    <div class="nav">
-        <a href="#news" class="active">News</a>
-        <a href="#publications">Publications</a>
-        <a href="#team">Team</a>
-        <a href="#contact">Contact</a>
+    <!-- Publications -->
+    <div class="section" id="publications">
+        <h2>Publications</h2>
+        
+        <!-- 2025 -->
+        <div class="year-group">
+            <h3>2025</h3>
+            
+            <div class="pub-item">Solving Partial Differential Equations via Radon Neural Operator. <em>In Proc. of NeurIPS</em>, (<span class="ccf-a">CCF A</span>)</div>
+            
+            <div class="pub-item">Arbitrary-scale Fusion Operator for High-resolution Hyperspectral Imaging. <em>IEEE Transactions on Multimedia</em>, 2025. (IF:9.7, SCI Q1, <span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">SpecSolver: Solving Spatial-Spectral Fusion via Semantic Transformer. <em>In Proc. ACMMM</em>, 2025. (<span class="ccf-a">CCF A</span>)</div>
+            
+            <div class="pub-item">Arbitrary-scale Fusion Neural Operator. <em>In Proc. ACMMM</em>, 2025. (<span class="ccf-a">CCF A, Oral</span>)</div>
+            
+            <div class="pub-item">Laboring on Less Labors: RPCA Paradigm for Pan-sharpening. <em>In Proc. ICCV</em>, 2025. (<span class="ccf-a">CCF A</span>)</div>
+            
+            <div class="pub-item">Information-coupled MRI acceleration via Multi-modal Mapping and Progressive Masking. <em>Pattern Recognition</em>, 171(2026): 112061. (IF: 7.6, SCI Q1, <span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">BioGraphFusion: Graph Knowledge Embedding for Biological Completion and Reasoning. <em>Bioinformatics</em>, 2025, 41(7): btaf408. (IF: 5.4, SCI Q2, <span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">Gradient Selection Tuning via Information Bottleneck. <em>28th European Conference on Artificial Intelligence</em>, Bologna, Italy, 2025. (<span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">Controllable Face Inpainting via Pseudo-Style Embedding. <em>28th European Conference on Artificial Intelligence</em>, Bologna, Italy, 2025. (<span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">Object-level Control for Refined Structure and Appearance in Conditional Image Synthesis. <em>28th European Conference on Artificial Intelligence</em>, Bologna, Italy, 2025. (<span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">Nonlinear Learnable Triple-Domain Transform Tensor Nuclear Norm for Hyperspectral Image Super-Resolution. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 63: 5514117, 2025. (IF: 8.6, SCI Q1)</div>
+            
+            <div class="pub-item">LMO: Linear Mamba operator for MRI Reconstruction. <em>In Proc. CVPR</em>, 2025. (<span class="ccf-a">CCF A</span>)</div>
+            
+            <div class="pub-item">Collaborative Cross-Complementary Unfolding Network for Pan-sharpening Remote Sensing Image. <em>ACM International Conference on Multimedia Retrieval (ICMR)</em>, 2025. (<span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">Spatial-Spectral Fusion Neural Operator. <em>In Proc. ICME</em>, 2025. (<span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">C3S3: Complementary Competition and Contrastive Selection for Semi-Supervised Medical Image Segmentation. <em>In Proc. ICME</em>, 2025. (<span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">Multi-Scale Core-Peripheral Attention Network for Camouflaged Object Detection. <em>In Proc. ICME</em>, 2025. (<span class="ccf-b">CCF B, Oral</span>)</div>
+            
+            <div class="pub-item">Axial-shunted Spatial-temporal Conversation for Change Detection. <em>ACM Transactions on Multimedia Computing Communications and Applications</em>, 21(5): 141, 2025. (IF: 6.0, SCI Q2, <span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">Semantic-Spatial Attention for Refined Object Placement in Text-to-Image Synthesis. <em>IEEE Transactions on Multimedia</em>, (IF:9.7, SCI Q1, <span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">Pipeline-Centered Neighboring Network for Deep Unfolding Pansharpening. <em>In Proc. of the Int. Conf. on Acoustics, Speech and Signal Processing (ICASSP)</em>, IEEE, 2025. (<span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">Breaking Information Isolation: Accelerating MRI via Inter-sequence Mapping and Progressive Masking. <em>In Proc. of the AAAI Conf. on Artificial Intelligence</em>, 2025. (<span class="ccf-a">CCF A</span>)</div>
+        </div>
+        
+        <!-- 2024 -->
+        <div class="year-group">
+            <h3>2024</h3>
+            
+            <div class="pub-item">Cascade-Transform-based Tensor Nuclear Norm for Hyperspectral Image Super-Resolution. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 2024, 62: 5540616. (IF: 5, SCI Q1, <span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">Alias-Free Mamba Neural Operator. <em>In Proc. of NeurIPS</em> (<span class="ccf-a">CCF A</span>)</div>
+            
+            <div class="pub-item">Learning Object Placement via Convolution Scoring Attention. <em>In Proc. of BMVC</em> (<span class="ccf-c">CCF C</span>)</div>
+            
+            <div class="pub-item">Hybrid Tensor-Gaussians Representation with Space-Aware Pruning. <em>In Proc. of ISMAR</em> (<span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">STENet: A Spatial Selection and Temporal Evolution Network for Change Detection in Remote Sensing Images. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 2024, 62: 4410915. (IF: 5, SCI Q1, <span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">Decoupled Competitive Framework for Semi-supervised Medical Image Segmentation. <em>In Proc. of the 27th European Conference on Artificial Intelligence</em> (<em>ECAI</em>2024). (<span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">PGIUN: Physics-Guided Implicit Unrolling Network for Accelerated MRI. <em>IEEE Transactions on Computational Imaging</em>, 2024, 10: 1055-1068. (IF 4.2 , SCI Q2)</div>
+            
+            <div class="pub-item">Multi-Contrast MRI Reconstruction via Information-growth Holistic Unfolding Network. <em>IEEE Transactions on Instrumentation & Measurement</em>, 2024, 73: 4010412. (IF 5.6, SCI Q2)</div>
+            
+            <div class="pub-item">Robust Principal Component Analysis via High-Order self-learning Transform Tensor Nuclear Norm. <em>In Proc. of ICME</em>, 2024. (<span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">Dual-Enhanced High-Order Self-Learning TSVD for Robust Principal Component Analysis. <em>IEEE Transactions on Artificial Intelligence</em>, 2024, 5(7): 3564-3578. (Accepted)</div>
+            
+            <div class="pub-item">High Fidelity Person-centric Subject-to-Image Synthesis. <em>In Proc</em>. <em>of CVPR</em>, 2024. (<span class="ccf-a">CCF A</span>)</div>
+            
+            <div class="pub-item">Residual Graph Transformer for Autism Spectrum Disorder Prediction. <em>Computer Methods and Programs in Biomedicine</em>, 2024, 247: 108065. (IF 6.1, SCI Q2)</div>
+            
+            <div class="pub-item">CGMA-Net: Cross-Level Guidance and Multi-Scale Aggregation Network for Polyp Segmentation. <em>IEEE Journal of Biomedical and Health Informatics</em>, 2024, 28(3): 1424-1435. (IF 7.7, SCI Q1, <span class="ccf-c">CCF C</span>)</div>
+            
+            <div class="pub-item">ORSI Salient Object Detection via Progressive Semantic Flow and Uncertainty-aware Refinement. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 2024, 62: 5608013. (IF: 2, SCI Q1, <span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">SyFormer: Structure-Guided Synergism Transformer for Large-Portion Image Inpainting. <em>In Proc. of the AAAI Conf. on Artificial Intelligence</em>, 2024. (<span class="ccf-a">CCF A</span>)</div>
+            
+            <div class="pub-item">Null Space Matters: Range-Null Decomposition for Consistent Multi-Contrast MRI Reconstruction. <em>In Proc. of the AAAI Conf. on Artificial Intelligence</em>, 2024. (<span class="ccf-a">CCF A</span>)</div>
+            
+            <div class="pub-item">Memory-augmented dual-domain unfolding network for MRI reconstruction. <em>In Proc. of the Int. Conf. on Acoustics, Speech and Signal Processing (ICASSP)</em>, IEEE, 2024. (<span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">HMNet: Hierarchical Microscale-aware Network for Infrared Small Target Detection. <em>In Proc. of the Int. Conf. on Acoustics, Speech and Signal Processing (ICASSP)</em>, IEEE, 2024. (Oral, <span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">Multi-dimensional Visual Data Completion via Weighted Hybrid Graph-Laplacian. <em>Signal Processing</em>, 2024, 216: 109305. (IF 4.4, SCI Q2, <span class="ccf-c">CCF C</span>)</div>
+        </div>
+        
+        <!-- 2023 -->
+        <div class="year-group">
+            <h3>2023</h3>
+            
+            <div class="pub-item">Contrastive Attention-guided Multi-level Feature Registration for Reference-based Image Super-resolution. <em>ACM Transactions on Multimedia Computing Communications and Applications</em>, 2023, 20(2): 55. (IF 5.1, SCI Q3, <span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">Latent-space Unfolding for MRI Reconstruction. <em>ACM MM</em>2023. (Oral, <span class="ccf-a">CCF A</span>)</div>
+            
+            <div class="pub-item">A Lightweight Collective-Attention Network For Change Detection. <em>ACM MM</em>. (<span class="ccf-a">CCF A</span>)</div>
+            
+            <div class="pub-item">Cascading Blend Network for Image Inpainting. <em>ACM Transactions on Multimedia Computing Communications and Applications</em>, 2023, 20(1): 1-21. (IF 5.1, SCI Q3, <span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">Remote Sensing Semantic Segmentation via Boundary Supervision Aided Multi-scale Channel-wise Cross Attention Network. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 2023, 61: 4405814. (IF: 2, SCI Q1, <span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">PLSNet: Position-aware GCN-based Autism Spectrum Disorder Diagnosis via FC Learning and ROIs Sifting. <em>Computers in Biology and Medicine</em>, 2023, 163: 107184. (IF 7.7, SCI Q1)</div>
+            
+            <div class="pub-item">GCN-based Autism Spectrum Disorder Diagnosis via Convolutional Restructuring Attention. In <em>CogSci</em>, 2023. (<span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">Tensor Completion via Hybrid Shallow-and-Deep Priors. <em>Applied Intelligence</em>, 2023, 53: 1709-1714. (IF: 5.3, SCI Q2, <span class="ccf-c">CCF C</span>)</div>
+            
+            <div class="pub-item">GA-HQS: MRI Reconstruction via a Generically Accelerated Unfolding Approach. In <em>IEEE ICME</em>, 2023. (<span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">Compact Intertemporal Coupling Network for Remote Sensing Change Detection. In <em>IEEE ICME</em>, 2023. (<span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">CA-GAN: Object Placement via Coalescing Attention Based Generative Adversarial Network. In <em>IEEE ICME</em>, 2023. (<span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">ORSI Salient Object Detection via Cross-scale Interaction and Enlarged Receptive Field. <em>IEEE Geoscience and Remote Sensing Letters</em>, 2023, 20: 6003205. (IF: 4.8, SCI Q2, <span class="ccf-c">CCF C</span>)</div>
+            
+            <div class="pub-item">Hyperspectral Image Super-Resolution via Subspace-Based Deep Prior Regularization. <em>Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, 2023, 16: 2437-2449. (IF: 5.5, SCI Q3)</div>
+            
+            <div class="pub-item">Low-dose CT Reconstruction via Optimization-inspired G In Proc: <em>IEEE International Conference on Acoustics, Speech and Signal Processing</em>, 2023. (<span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">Building Change Detection using Cross-temporal Feature Interaction Network. In Proc: <em>IEEE International Conference on Acoustics, Speech and Signal Processing</em>, 2023. (<span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">ORSI Salient Object Detection via Bidimensional Attention and Full-stage Semantic Guidance. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 2023, 61: 5603213. (IF: 2, SCI Q1, <span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">Change Detection on Remote Sensing Images using Dual-branch Multilevel Intertemporal Network. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 2023,61: 4401015. (<span class="highlight-hot">Hot Paper</span>, <span class="highlight-cited">Highly Cited Paper</span>, IF: 2, SCI Q1, <span class="ccf-b">CCF B</span>)</div>
+            
+            <div class="pub-item">Nonlocal B-spline Representation of Tensor Decomposition for Hyperspectral Image Inpainting. <em>Signal Processing</em>, 2023, 206: 108888. (IF: 4.4, SCI Q2, <span class="ccf-c">CCF C</span>)</div>
+            
+            <div class="pub-item">CASF-Net: Cross-attention and Cross-scale Fusion Network for Medical Image Segmentation. <em>Computer Methods and Programs in Biomedicine</em>, 2023, 229: 107307. (IF: 6.1, SCI Q2)</div>
+        </div>
     </div>
     
-    <!-- Main Content -->
-    <div class="container">
-        
-        <!-- ============================================================
-             Recent News
-             ============================================================ -->
-        <div class="section" id="news">
-            <h2>Recent News</h2>
-            <div class="news-grid">
-                <div class="news-card">
-                    <div class="date">2025.10</div>
-                    <div class="title">Neural Operator Paper Accepted</div>
-                    <div class="venue">NeurIPS 2025</div>
-                    <div class="description">Radon Neural Operator for solving PDEs accepted at NeurIPS (CCF A)</div>
-                </div>
-                
-                <div class="news-card">
-                    <div class="date">2025.06</div>
-                    <div class="title">MRI Reconstruction</div>
-                    <div class="venue">CVPR 2025</div>
-                    <div class="description">Linear Mamba operator for MRI Reconstruction accepted at CVPR (CCF A)</div>
-                </div>
-                
-                <div class="news-card">
-                    <div class="date">2025.09</div>
-                    <div class="title">Multiple Papers at ICCV</div>
-                    <div class="venue">ICCV 2025</div>
-                    <div class="description">RPCA Paradigm for Pan-sharpening accepted at ICCV (CCF A)</div>
-                </div>
-                
-                <div class="news-card">
-                    <div class="date">2025.08</div>
-                    <div class="title">Two Papers at ACM MM</div>
-                    <div class="venue">ACM MM 2025</div>
-                    <div class="description">Fusion Neural Operator accepted as Oral presentation (CCF A)</div>
-                </div>
-                
-                <div class="news-card">
-                    <div class="date">2024.12</div>
-                    <div class="title">Mamba Neural Operator</div>
-                    <div class="venue">NeurIPS 2024</div>
-                    <div class="description">Alias-Free Mamba Neural Operator accepted at NeurIPS (CCF A)</div>
-                </div>
-                
-                <div class="news-card">
-                    <div class="date">2024.06</div>
-                    <div class="title">Image Synthesis at CVPR</div>
-                    <div class="venue">CVPR 2024</div>
-                    <div class="description">Person-centric Subject-to-Image Synthesis accepted at CVPR (CCF A)</div>
-                </div>
+    <!-- Team -->
+    <div class="section" id="team">
+        <h2>Team</h2>
+        <div class="team-photo">
+            <img src="images/team_images/tuanjian.jpg" alt="Mount Huaguo Lab Team Photo">
+        </div>
+        <div class="pi-bio-container">
+            <button class="toggle-bio-button" onclick="toggleBio()">Professor Jianwei Zheng's Bio</button>
+            <div class="pi-bio-content" id="piBioContent">
+                <p><strong>Jianwei Zheng</strong> is a Professor and Doctoral Supervisor. He received his Ph.D. in Engineering from Zhejiang University of Technology in June 2010 (Supervisor: Professor Wanliang Wang) and joined the School of Computer Science and Technology in July of the same year. His main research interests include intelligent modeling, data analysis, and AI4Science.</p>
+                <p>He has led 2 projects funded by the National Natural Science Foundation of China, 1 project from the National Key R&D Program, 1 project from Zhejiang Province's "Leading Goose" Program, 1 key project from the Provincial Natural Science Foundation, and 3 general projects from the Provincial Natural Science Foundation, along with 6 enterprise-commissioned projects. He has received the Second Prize for Scientific and Technological Progress in Zhejiang Province, the First Prize for Wu Wenjun Artificial Intelligence Science and Technology Progress Award, the Second Prize for Invention and Creation from the China Invention Association, and the Excellent Award for China Industry-University-Research Cooperation Innovation Achievements. <strong>He was selected as one of the World's Top 2% Scientists in 2025.</strong></p>
+                <p>As the first or corresponding author, he has published over 100 papers in renowned domestic and international academic journals and conferences such as TNNLS, TIP, NeurIPS, CVPR, AAAI, ACM MM, TGRS, TCSVT, TMM, Pattern Recognition, Journal of Computer Research and Development, Journal of Software, and Acta Automatica Sinica, including 4 highly cited papers and 1 hot paper. He has received one International Conference Best Paper Award and one Best Poster Award. He has published 1 monograph. He holds over 30 national authorized invention patents, 2 utility model patents, and over 30 software copyrights as the first author.</p>
+                <p>He serves as the Deputy Director of the Zhejiang Provincial Big Data and Artificial Intelligence Professional Committee, an expert for the China International College Students' Innovation Competition, an executive committee member of the Zhejiang Provincial College Students' Artificial Intelligence Competition, a communication review expert for the National Natural Science Foundation of China, and a communication review expert for provincial foundations in Zhejiang and Guangdong. He previously served as a member of the Artificial Intelligence Professional Committee of the Zhejiang Computer Society and a director of the Hangzhou Artificial Intelligence Society.</p>
             </div>
         </div>
-        
-        <!-- ============================================================
-             Publications
-             ============================================================ -->
-        <div class="section" id="publications">
-            <h2>Publications</h2>
-            
-            <!-- 2025 -->
-            <div class="year-section">
-                <h3>2025</h3>
-                
-                <div class="publication">1. Wenbin Lu, Yihan Chen, Junnan Xu, Wei Li, Junwei Zhu, <strong>Jianwei Zheng</strong>. Solving Partial Differential Equations via Radon Neural Operator. <em>In Proc. of NeurIPS</em>, (<span class="ccf-a">CCF A</span>)</div>
-                
-                <div class="publication">2. Junwei Zhu, Honghui Xu, Wei Li, Jaiwei Jiang, Zhi Liu, <strong>Jianwei Zheng</strong>. Arbitrary-scale Fusion Operator for High-resolution Hyperspectral Imaging. <em>IEEE Transactions on Multimedia</em>, 2025. (IF:9.7, 中科院1区, <span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">3. Wei Li, Junwei Zhu, Honghui xu, Jiawei Jiang, <strong>Jianwei Zheng</strong>. SpecSolver: Solving Spatial-Spectral Fusion via Semantic Transformer. <em>In Proc. ACMMM</em>, 2025. (<span class="ccf-a">CCF A</span>)</div>
-                
-                <div class="publication">4. Junwei Zhu, Wei Li, Honghui Xu, Jiawei Jiang, Zhi Liu*, <strong>Jianwei Zheng</strong>. Arbitrary-scale Fusion Neural Operator. <em>In Proc. ACMMM</em>, 2025. (<span class="ccf-a">CCF A, Oral</span>)</div>
-                
-                <div class="publication">5. Honghui Xu, Chuangjie Fang, Yibin Wang, Jie Wu, <strong>Jianwei Zheng</strong>. Laboring on Less Labors: RPCA Paradigm for Pan-sharpening. <em>In Proc. ICCV</em>, 2025. (<span class="ccf-a">CCF A</span>)</div>
-                
-                <div class="publication">6. Jiawei Jiang, Jiacheng Chen, Honghui Xu, Yuhang He, <strong>Jianwei Zheng</strong>. Information-coupled MRI acceleration via Multi-modal Mapping and Progressive Masking. <em>Pattern Recognition</em>, 171(2026): 112061. (IF: 7.6, 中科院1区, <span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">7. Yitong Lin, Jiaying He, Jiahe Chen, Xinnan Zhu, <strong>Jianwei Zheng</strong>, and Tao Bo*. BioGraphFusion: Graph Knowledge Embedding for Biological Completion and Reasoning. <em>Bioinformatics</em>, 2025, 41(7): btaf408. (IF: 5.4, 中科院2区, <span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">8. Xiaoxu Lin, Wei Li, Junwei Zhu, Ni Xu, Honghui Xu and <strong>Jianwei Zheng</strong>. Gradient Selection Tuning via Information Bottleneck. 28th European Conference on Artificial Intelligence, Bologna, Italy, 2025. (<span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">9. Jie Wu, Jiawei Jiang, Yueqian Quan, Honghui Xu, Wanjun Chen and <strong>Jianwei Zheng</strong>. Controllable Face Inpainting via Pseudo-Style Embedding. 28th European Conference on Artificial Intelligence, Bologna, Italy, 2025. (<span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">10. Ni Xu, Wei Li, Zhouchao Fu, Xiaoxu Lin, Wanjun Chen and <strong>Jianwei Zheng</strong>. Object-level Control for Refined Structure and Appearance in Conditional Image Synthesis. 28th European Conference on Artificial Intelligence, Bologna, Italy, 2025. (<span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">11. Honghui Xu, Yueqian Quan, Mengjie Qin, Yibin Wang, Chuangjie Fang, Yan Li, and <strong>Jianwei Zheng</strong>. Nonlinear Learnable Triple-Domain Transform Tensor Nuclear Norm for Hyperspectral Image Super-Resolution. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 63: 5514117, 2025, DOI: 10.1109/TGRS.2025.3568627. (IF: 8.6, 中科院1区)</div>
-                
-                <div class="publication">12. Wei Li, Jiawei Jiang, Jie Wu, Kaihao Yu, <strong>Jianwei Zheng</strong>. LMO: Linear Mamba operator for MRI Reconstruction. <em>In Proc. CVPR</em>, 2025. (<span class="ccf-a">CCF A</span>)</div>
-                
-                <div class="publication">13. Honghui Xu, Yan Li, Yutao jia, Chuangjie Fang, Wanjun Chen, <strong>Jianwei Zheng</strong>. Collaborative Cross-Complementary Unfolding Network for Pan-sharpening Remote Sensing Image. <em>ACM International Conference on Multimedia Retrieval (ICMR)</em>, 2025. (<span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">14. Wei Li, Jiawei Jiang, Ni Xu, Ying Cui, Yan Li, <strong>Jianwei Zheng</strong>. Spatial-Spectral Fusion Neural Operator. <em>In Proc. ICME</em>, 2025. (<span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">15. Jiaying He#, Yitong Lin#, Jiahe Chen, Honghui Xu*, <strong>Jianwei Zheng</strong>. C3S3: Complementary Competition and Contrastive Selection for Semi-Supervised Medical Image Segmentation. <em>In Proc. ICME</em>, 2025. (<span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">16. Yueqian Quan, Tiancheng Pan, Chuangjie, Fang, Yan Li, <strong>Jianwei Zheng</strong>. Multi-Scale Core-Peripheral Attention Network for Camouflaged Object Detection. <em>In Proc. ICME</em>, 2025. (<span class="ccf-b">CCF B, Oral</span>)</div>
-                
-                <div class="publication">17. Yuchao Feng, Mengjie, Qin, Jiawei Jiang, Jintao Lai, and <strong>Jianwei Zheng</strong>. Axial-shunted Spatial-temporal Conversation for Change Detection. <em>ACM Transactions on Multimedia Computing Communications and Applications</em>, 21(5): 141, 2025. DOI: 10.1145/3721135. (IF: 6.0, 中科院2区, <span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">18. <strong>Jianwei Zheng</strong>, Ni Xu, Wei Li, Jiawei Jiang, and Xiaoqin Zhang*. Semantic-Spatial Attention for Refined Object Placement in Text-to-Image Synthesis. <em>IEEE Transactions on Multimedia</em>, (IF:9.7, 中科院1区, <span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">19. Yan Li, Qiuju Chen, Chuangjie Fang, Ni Xu, Honghui Xu, and <strong>Jianwei Zheng</strong>. Pipeline-Centered Neighboring Network for Deep Unfolding Pansharpening. <em>In Proc. of the Int. Conf. on Acoustics, Speech and Signal Processing (ICASSP)</em>, IEEE, 2025. (<span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">20. <strong>Jianwei Zheng</strong>, Xiaomin Yao, Guojiang Shen, Wei Li, Jiawei Jiang*. Breaking Information Isolation: Accelerating MRI via Inter-sequence Mapping and Progressive Masking. <em>In Proc. of the AAAI Conf. on Artificial Intelligence</em>, 2025. (<span class="ccf-a">CCF A</span>)</div>
-            </div>
-            
-            <!-- 2024 -->
-            <div class="year-section">
-                <h3>2024</h3>
-                
-                <div class="publication">21. Honghui Xu, Chuangjie Fang, Yilin Ge, Yubin Gu, and <strong>Jianwei Zheng</strong>. Cascade-Transform-based Tensor Nuclear Norm for Hyperspectral Image Super-Resolution. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 2024, 62: 5540616, DOI: 10.1109/TGRS.2024.3508456. (IF: 5, 中科院1区, <span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">22. <strong>Jianwei Zheng</strong>, Wei Li, Ni Xu, Junwei Zhu, Xiaoxu Lin, Xiaoqin Zhang*. Alias-Free Mamba Neural Operator. <em>In Proc. of NeurIPS</em> (<span class="ccf-a">CCF A</span>)</div>
-                
-                <div class="publication">23. Yibin Wang, Yuchao Feng, <strong>Jianwei Zheng</strong>. Learning Object Placement via Convolution Scoring Attention. <em>In Proc. of BMVC</em> (<span class="ccf-c">CCF C</span>)</div>
-                
-                <div class="publication">24. Siyu Chen, Jiahe Ying, <strong>Jianwei Zheng</strong>. Hybrid Tensor-Gaussians Representation with Space-Aware Pruning. <em>In Proc. of ISMAR</em> (<span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">25. Xiang Pan, Jintao Lai, Yiting Jin, Xiaolei Zhou, and <strong>Jianwei Zheng</strong>. STENet: A Spatial Selection and Temporal Evolution Network for Change Detection in Remote Sensing Images. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 2024, 62: 4410915. (IF: 5, 中科院1区, <span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">26. Jiahe Chen, Jiahe Ying, Shen Wang, and <strong>Jianwei Zheng</strong>. Decoupled Competitive Framework for Semi-supervised Medical Image Segmentation. <em>In Proc. of the 27th European Conference on Artificial Intelligence (ECAI 2024)</em>. (<span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">27. Jiawei Jiang, Zihan He, Yueqian Quan, Jie Wu, <strong>Jianwei Zheng</strong>. PGIUN: Physics-Guided Implicit Unrolling Network for Accelerated MRI. <em>IEEE Transactions on Computational Imaging</em>, 2024, 10: 1055-1068. DOI: 10.1109/TCI.2024.3422840. (IF 4.2, 中科院2区)</div>
-                
-                <div class="publication">28. Jiacheng Chen, Fei Wu, <strong>Jianwei Zheng</strong>. Multi-Contrast MRI Reconstruction via Information-growth Holistic Unfolding Network. <em>IEEE Transactions on Instrumentation & Measurement</em>, 2024, 73: 4010412. (IF 5.6, 中科院2区)</div>
-                
-                <div class="publication">29. Honghui Xu, Queqian Quan, Chuangjie Fang, <strong>Jianwei Zheng</strong>. Robust Principal Component Analysis via High-Order self-learning Transform Tensor Nuclear Norm. <em>In Proc. of ICME</em>, 2024. (<span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">30. Honghui Xu, Chuangjie Fang, Renfang Wang, Shengyong Chen, <strong>Jianwei Zheng</strong>. Dual-Enhanced High-Order Self-Learning TSVD for Robust Principal Component Analysis. <em>IEEE Transactions on Artificial Intelligence</em>, 2024, 5(7): 3564-3578. DOI: 10.1109/TAI.2024.3373388.</div>
-                
-                <div class="publication">31. Yibin Wang, Weizhong Zhang, <strong>Jianwei Zheng</strong>, Cheng Jin*. High Fidelity Person-centric Subject-to-Image Synthesis. <em>In Proc. of CVPR</em>, 2024. (<span class="ccf-a">CCF A</span>)</div>
-                
-                <div class="publication">32. Yibin Wang, Haixia Long, Bo Tao, <strong>Jianwei Zheng</strong>. Residual Graph Transformer for Autism Spectrum Disorder Prediction. <em>Computer Methods and Programs in Biomedicine</em>, 2024, 247: 108065. DOI: 10.1016/j.cmpb.2024.108065. (IF 6.1, 中科院2区)</div>
-                
-                <div class="publication">33. <strong>Jianwei Zheng</strong>, Yidong Yan, Liang Zhao, Xiang Pan*. CGMA-Net: Cross-Level Guidance and Multi-Scale Aggregation Network for Polyp Segmentation. <em>IEEE Journal of Biomedical and Health Informatics</em>, 2024, 28(3): 1424-1435. DOI: 10.1109/JBHI.2023.3345479. (IF 7.7, 中科院1区, <span class="ccf-c">CCF C</span>)</div>
-                
-                <div class="publication">34. Yueqian Quan, Honghui Xu, Renfang Wang, Qiu Guan*, <strong>Jianwei Zheng</strong>. ORSI Salient Object Detection via Progressive Semantic Flow and Uncertainty-aware Refinement. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 2024, 62: 5608013. (IF: 2, 中科院1区, <span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">35. Jie Wu, Yuchao Feng, Honghui Xu, Chuanmeng Zhu, <strong>Jianwei Zheng</strong>. SyFormer: Structure-Guided Synergism Transformer for Large-Portion Image Inpainting. <em>In Proc. of the AAAI Conf. on Artificial Intelligence</em>, 2024. (<span class="ccf-a">CCF A</span>)</div>
-                
-                <div class="publication">36. Jiacheng Chen, Jiawei Jiang, <strong>Jianwei Zheng</strong>. Null Space Matters: Range-Null Decomposition for Consistent Multi-Contrast MRI Reconstruction. <em>In Proc. of the AAAI Conf. on Artificial Intelligence</em>, 2024. (<span class="ccf-a">CCF A</span>)</div>
-                
-                <div class="publication">37. Jiawei Jiang, Jie Wu, Yueqian Quan, <strong>Jianwei Zheng</strong>. Memory-augmented dual-domain unfolding network for MRI reconstruction. <em>In Proc. of the Int. Conf. on Acoustics, Speech and Signal Processing (ICASSP)</em>, IEEE, 2024. (<span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">38. Yueqian Quan, Honghui Xu, Yidong Yan, Hang Zheng, <strong>Jianwei Zheng</strong>. HMNet: Hierarchical Microscale-aware Network for Infrared Small Target Detection. <em>In Proc. of the Int. Conf. on Acoustics, Speech and Signal Processing (ICASSP)</em>, IEEE, 2024. (<span class="ccf-b">Oral, CCF B</span>)</div>
-                
-                <div class="publication">39. Jiawei Jiang, Yile Xu, Honghui Xu, Guojiang Shen, <strong>Jianwei Zheng</strong>. Multi-dimensional Visual Data Completion via Weighted Hybrid Graph-Laplacian. <em>Signal Processing</em>, 2024, 216: 109305. (IF 4.4, 中科院2区, <span class="ccf-c">CCF C</span>)</div>
-            </div>
-            
-            <!-- 2023 -->
-            <div class="year-section">
-                <h3>2023</h3>
-                
-                <div class="publication">40. <strong>Jianwei Zheng</strong>, Yu Liu, Yuchao Feng, Honghui Xu, Meiyu Zhang*. Contrastive Attention-guided Multi-level Feature Registration for Reference-based Image Super-resolution. <em>ACM Transactions on Multimedia Computing Communications and Applications</em>, 2023, 20(2): 55. (IF 5.1, 中科院3区, <span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">41. Jiawei Jiang, Yuchao Feng, Jiacheng Chen, Dongyan Guo, <strong>Jianwei Zheng</strong>. Latent-space Unfolding for MRI Reconstruction. <em>ACM MM 2023</em>, DOI: 10.1145/3581783.3613771. (<span class="ccf-a">Oral, CCF A</span>)</div>
-                
-                <div class="publication">42. Yuchao Feng, Yanyan Shao, Honghui xu, Jinshan Xu, <strong>Jianwei Zheng</strong>. A Lightweight Collective-Attention Network For Change Detection. <em>ACM MM</em> DOI: 10.1145/3581783.3613773. (<span class="ccf-a">CCF A</span>)</div>
-                
-                <div class="publication">43. Yiting Jin, Jie Wu, Wanliang Wang, Yidong Yan, Jiawei Jiang, <strong>Jianwei Zheng</strong>. Cascading Blend Network for Image Inpainting. <em>ACM Transactions on Multimedia Computing Communications and Applications</em>, 2023, 20(1): 1-21. DOI: 10.1145/3608952. (IF 5.1, 中科院3区, <span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">44. <strong>Jianwei Zheng</strong>, Anhao Shao, Yidong Yan, Jie Wu, Meiyu Zhang*. Remote Sensing Semantic Segmentation via Boundary Supervision Aided Multi-scale Channel-wise Cross Attention Network. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 2023, 61: 4405814. DOI: 10.1109/TGRS.2023.3292112. (IF: 2, 中科院1区, <span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">45. Yibin Wang, Haixia Long, Qianwei Zhou, Tao Bo, <strong>Jianwei Zheng</strong>. PLSNet: Position-aware GCN-based Autism Spectrum Disorder Diagnosis via FC Learning and ROIs Sifting. <em>Computers in Biology and Medicine</em>, 2023, 163: 107184. (IF 7.7, 中科院1区)</div>
-                
-                <div class="publication">46. Yibin Wang, Haixia Long, Qianwei Zhou, <strong>Jianwei Zheng</strong>. GCN-based Autism Spectrum Disorder Diagnosis via Convolutional Restructuring Attention. In <em>CogSci</em>, 2023. (<span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">47. Honghui Xu, Jiawei Jiang, Yuchao Feng, Yiting Jin, <strong>Jianwei Zheng</strong>. Tensor Completion via Hybrid Shallow-and-Deep Priors. <em>Applied Intelligence</em>, 2023, 53: 1709-1714. DOI: 10.1007/s10489-022-04331-4. (IF: 5.3, 中科院2区, <span class="ccf-c">CCF C</span>)</div>
-                
-                <div class="publication">48. Jiawei Jiang, Jiacheng Chen, Honghui Xu, Yuchao Feng, <strong>Jianwei Zheng</strong>. GA-HQS: MRI Reconstruction via a Generically Accelerated Unfolding. <em>In IEEE ICME</em>, 2023. (<span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">49. Yuchao Feng, Honghui Xu, Jiawei Jiang, <strong>Jianwei Zheng</strong>. Compact Intertemporal Coupling Network for Remote Sensing Change Detection. In <em>IEEE ICME</em>, 2023. (<span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">50. Yibin Wang, Yuchao Feng, Jie Wu, Honghui Xu, <strong>Jianwei Zheng</strong>. CA-GAN: Object Placement via Coalescing Attention Based Generative Adversarial Network. In <em>IEEE ICME</em>, 2023. (<span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">51. <strong>Jianwei Zheng</strong>, Yueqian Quan, Hang Zheng, Yibin Wang, Xiang Pan*. ORSI Salient Object Detection via Cross-scale Interaction and Enlarged Receptive Field. <em>IEEE Geoscience and Remote Sensing Letters</em>, 2023, 20: 6003205, DOI: 10.1109/LGRS.2023.3249764. (IF: 4.8, 中科院2区, <span class="ccf-c">CCF C</span>)</div>
-                
-                <div class="publication">52. <strong>Jianwei Zheng</strong>, Pengfei Li, Honghui Xu, Jiawei Jiang, Yuchao Feng, and Zhi Liu*. Hyperspectral Image Super-Resolution via Subspace-Based Deep Prior Regularization. <em>Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, 2023, 16: 2437-2449, DOI:10.1109/JSTARS.2023.3249202. (IF: 5.5, 中科院3区)</div>
-                
-                <div class="publication">53. Jiawei Jiang, Yuchao Feng, Honghui Xu, <strong>Jianwei Zheng</strong>. Low-dose CT Reconstruction via Optimization-inspired. In Proc: <em>IEEE International Conference on Acoustics, Speech and Signal Processing</em>, 2023. (<span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">54. Yuchao Feng, Jiawei Jiang, Honghui Xu, <strong>Jianwei Zheng</strong>. Building Change Detection using Cross-temporal Feature Interaction Network. In Proc: <em>IEEE International Conference on Acoustics, Speech and Signal Processing</em>, 2023. (<span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">55. Yubin Gu, Honghui Xu, Yueqian Quan, Wanjun Chen, and <strong>Jianwei Zheng</strong>. ORSI Salient Object Detection via Bidimensional Attention and Full-stage Semantic Guidance. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 2023, 61: 5603213. (IF: 2, 中科院1区, <span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">56. Yuchao Feng, Jiawei Jiang, Honghui Xu, <strong>Jianwei Zheng</strong>. Change Detection on Remote Sensing Images using Dual-branch Multilevel Intertemporal Network. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 2023, 61: 4401015. (<span class="highlight">Hot Paper, Highly Cited Paper</span>, IF: 2, 中科院1区, <span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">57. Honghui Xu, Mengjie Qin, Yidong Yan, Yueqian Quan, <strong>Jianwei Zheng</strong>. Nonlocal B-spline Representation of Tensor Decomposition for Hyperspectral Image Inpainting. <em>Signal Processing</em>, 2023, 206: 108888. (IF: 4.4, 中科院2区, <span class="ccf-c">CCF C</span>)</div>
-                
-                <div class="publication">58. <strong>Jianwei Zheng</strong>, Hao Liu, Yuchao Feng, Jinshan Xu, Liang Zhao*. CASF-Net: Cross-attention and Cross-scale Fusion Network for Medical Image Segmentation. <em>Computer Methods and Programs in Biomedicine</em>, 2023, 229: 107307. (IF: 6.1, 中科院2区)</div>
-                
-                <div class="publication">59. <strong>郑建炜</strong>, 练义欣, 蒋嘉伟. 基于重加权二阶正则项的图像修复算法. <em>小型微型计算机系统</em>, 2023, 44(9): 2009-2016.</div>
-            </div>
-            
-            <!-- 2022 -->
-            <div class="year-section">
-                <h3>2022</h3>
-                
-                <div class="publication">60. Yiting Jin, Jie Wu, Wanliang Wang, Yibin Wang, Xi Yang, <strong>Jianwei Zheng</strong>. Dense Vehicle Counting Estimation via a Synergism Attention Network. <em>Electronics</em>. 2022, 11(22). (IF: 2.9, 中科院3区)</div>
-                
-                <div class="publication">61. <strong>Jianwei Zheng</strong>, Yubin Gu, Yuchao Feng, Jinshan Xu, Meiyu Zhang*. Boosting Feature-Aware Network for Salient Object Detection. <em>In Int. Conf. Artificial Neural Networks ICANN</em>, Bristol, UK, 6-9 September, 2022, pp: 14-26. (<span class="ccf-c">Oral, CCF C</span>)</div>
-                
-                <div class="publication">62. Jiawei Jiang, Yuchao Feng, Honghui Xu, Guojiang Shen, <strong>Jianwei Zheng</strong>. Hyperspectral and Multispectral Data Fusion Via Joint Local-Nonlocal Modeling and Truncation. <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, 2022, 15: 5880-5893. (IF: 5.5, 中科院3区)</div>
-                
-                <div class="publication">63. Yuchao Feng, Honghui Xu, Jiawei Jiang, Hao Liu, <strong>Jianwei Zheng</strong>. ICIF-Net: Intra-scale Cross-interaction and Inter-scale Feature Fusion Network For Bi-temporal Remote Sensing Images Change Detection. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 2022, 60: 4410213. (<span class="highlight">Highly Cited Paper</span>, IF: 2, 中科院1区, <span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">64. <strong>郑建炜</strong>, 周鑫杰, 徐宏辉, 秦梦洁, 白琮*. 张量环因子非凸秩约束的高光谱图像超解析. <em>光子学报</em>, 2022, 51(2): 0210003. (EI, ESCI)</div>
-                
-                <div class="publication">65. Honghui Xu, <strong>Jianwei Zheng</strong>, Xiaomin Yao, Yuchao Feng, Shengyong Chen. Fast tensor nuclear norm for structured low-rank visual inpainting. <em>IEEE Transactions on Circuits and Systems for Video Technology</em>, 2022, 32(2): 538-552. (IF: 4, 中科院1区, <span class="ccf-b">CCF B</span>)</div>
-            </div>
-            
-            <!-- 2021 -->
-            <div class="year-section">
-                <h3>2021</h3>
-                
-                <div class="publication">66. Yuchao Feng, <strong>Jianwei Zheng</strong>, Mengjie Qin, Cong Bai, and Jinglin Zhang. 3D Octave and 2D Vanilla Mixed Convolutional Neural Network for Hyperspectral Image Classification with Limited Samples. <em>Remote Sensing</em>, 2021, 13, 4407. (IF: 5.0, 中科院2区)</div>
-                
-                <div class="publication">67. <strong>Jianwei Zheng</strong>, Mengjie Qin, Honghui Xu, Yuchao Feng, Peijun Chen*, Shengyong Chen. Tensor completion using patch-wise high order Hankelization and randomized tensor ring initialization. <em>Engineering Applications of Artificial Intelligence</em>, 2021, 106 (2021) 104472. (IF: 0, 中科院1区, <span class="ccf-c">CCF C</span>)</div>
-                
-                <div class="publication">68. Honghui Xu, Mengjie Qin, Shengsyong Chen, Yuhui Zheng, and <strong>Jianwei Zheng</strong>*. Hyperspectral-multispectral image fusion via tensor ring and subspace decompositions. <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, 2021, 14: 8823-8837. (IF: 4.715, 中科院2区)</div>
-                
-                <div class="publication">69. <strong>Jianwei Zheng</strong>, Ping Yang, Guojiang Shen*, Shengyong Chen, Wei Zhang*. Enhanced low-rank constraint for temporal subspace clustering and its acceleration scheme. <em>Pattern Recognition</em>, 111 (2021) 107678. (IF: 0, 中科院1区, <span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">70. <strong>Jianwei Zheng</strong>, Jiawei Jiang, Honghui Xu, Zhi Liu*, Fei Gao. Manifold based nonlocal second-order regularization for Hyperspectral image inpainting. <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, 2021, 14: 224-236. (IF: 4.715, 中科院2区)</div>
-                
-                <div class="publication">71. <strong>郑建炜</strong>, 黄娟娟, 秦梦洁, 徐宏辉, 刘志*. 基于非局部相似及加权截断核范数的高光谱图像去噪. <em>计算机科学</em>, 2021, 48(9): 160-167. (中文<span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">72. 徐宏辉, <strong>郑建炜</strong>, 秦梦洁, 陈婉君. 结构化矩阵优化的高光谱图像噪声去除算法. <em>计算机辅助设计与图形学学报</em>, 2021, 33(1): 68-80. (中文<span class="ccf-a">CCF A</span>)</div>
-                
-                <div class="publication">73. <strong>Jianwei Zheng</strong>, Yuchao Feng, Cong Bai*, Jinglin Zhang. Hyperspectral image classification using mixed convolutions and covariance pooling. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 2021, 59(1): 522-534. (<span class="highlight">Highly Cited Paper</span>, IF: 5.695, 中科院1区, <span class="ccf-b">CCF B</span>)</div>
-            </div>
-            
-            <!-- 2020 -->
-            <div class="year-section">
-                <h3>2020</h3>
-                
-                <div class="publication">74. <strong>Jianwei Zheng</strong>, Ping Yang, Xi Yang*, Shengyong Chen*. Truncated low-rank and total p variation constrained color image completion and its Moreau approximation algorithm. <em>IEEE Transactions on Image Processing</em>, 2020, 29: 7861-7874. (IF: 041, 中科院1区, <span class="ccf-a">CCF A</span>)</div>
-                
-                <div class="publication">75. Mengjie Qin, Zhuorong Li, Shengyong Chen, Qiu Guan, and <strong>Jianwei Zheng</strong>. Low-rank tensor completion and total variation minimization for color image inpainting. <em>IEEE Access</em>, 2020, 8(1): 53049-53061. (中科院二区, IF: 745)</div>
-                
-                <div class="publication">76. Yanwei Zhao, Ping Yang, Qiu Guan, <strong>Jianwei Zheng</strong>, Wanliang Wang. Image denoising using sparsifying transform learning and weighted singular values minimization. <em>Computational Intelligence and Neuroscience</em>, 2020, DOI: 10.1155/2019/8392032. (IF: 69, JCR Q2, 中科院3区)</div>
-                
-                <div class="publication">77. Yanhong Yang, <strong>Jianwei Zheng</strong>, Shengyong Chen*, and Meiyu Zhang. Hyperspectral image restoration via local low-rank matrix recovery and Moreau-enhanced total variation. <em>IEEE Geoscience and Remote Sensing Letters</em>, 2020, 17(6): 1037-1041. (IF: 966, JCR Q1, 中科院2区, <span class="ccf-c">CCF C</span>)</div>
-                
-                <div class="publication">78. <strong>Jianwei Zheng</strong>, Mengjie Qin, Xiaolong Zhou*, Jiafa Mao*, and Hongchuan Yu. Efficient implementation of truncated reweighting low-rank matrix approximation. <em>IEEE Transactions on Industrial Informatics</em>, 2020, 16(1): 488-500. (IF: 215, JCR Q1, 中科院1区)</div>
-            </div>
-            
-            <!-- 2019 -->
-            <div class="year-section">
-                <h3>2019</h3>
-                
-                <div class="publication">79. Jinglin Zhang, Menjie Qin, Cong Bai, <strong>Jianwei Zheng</strong>. Missing elements recovery using low-rank tensor completion and total variation minimization. <em>16th International Forum of Digital TV and Multimedia Communication (16th IFTC)</em>, Shanghai, China, 2019.9.19-2019.9.20. (<span class="highlight">Best Paper Award</span>)</div>
-                
-                <div class="publication">80. <strong>Jianwei Zheng</strong>, Kechen Lou, Xi Yang*, Cong Bai*, and Jinhui Tang. Weighted mixed-norm regularized regression for robust face identification. <em>IEEE Transactions on Neural Networks and Learning Systems</em>, 2019, 30(12): 3788-3802. (IF: 793, JCR Q1, 中科院1区, <span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">81. <strong>郑建炜</strong>, 李卓蓉, 王万良*, 陈婉君. 联合Laplacian正则项和自适应特征学习的数据聚类算法. <em>软件学报</em>, 2019, 30(12): 3846- (中文<span class="ccf-a">CCF A</span>)</div>
-                
-                <div class="publication">82. <strong>Jianwei Zheng</strong>. Kechen Lou, Ping Yang*, and Wanjun Chen, and Wanliang Wang. Double weighted low-rank representation and its efficient implementation. <em>PAKDD</em>, Macau, China, 2019: 565-577. (<span class="ccf-c">CCF C</span>, Acceptance rate 24.7%)</div>
-                
-                <div class="publication">83. <strong>郑建炜</strong>, 鞠振宇, 朱文博, 王万良*. 融合关联矩阵自学习和显式秩约束的数据表示分簇算法. <em>计算机学报</em>, 2019, 42(3): 497-511. (中文<span class="ccf-a">CCF A</span>)</div>
-            </div>
-            
-            <!-- 2018 -->
-            <div class="year-section">
-                <h3>2018</h3>
-                
-                <div class="publication">84. <strong>Jianwei Zheng</strong>. Cheng Lu, Hongchuan Yu, Shengyong Chen, Wanliang Wang*. Iterative reconstrained low-rank representation via weighted nonconvex regularization. <em>IEEE Access</em>, 2018, 6(1): 51693-51707. (中科院二区, IF: 4.098)</div>
-                
-                <div class="publication">85. <strong>郑建炜</strong>, 路程, 秦梦洁, 陈婉君*. 联合特征选择和光滑表示的子空间聚类算法. <em>模式识别与人工智能</em>, 2018, 31(5): 409-418. (中文<span class="ccf-b">CCF B</span>)</div>
-                
-                <div class="publication">86. <strong>Jianwei Zheng</strong>, Mengjie Qin, Hongchuan Yu, Wanliang Wang. An efficient truncated nuclear norm constrained matrix completion for image inpainting. <em>Computer Graphics International (CGI2018)</em>, Bintan, Indonesia, J 11-14, 2018: 97-106. (<span class="ccf-c">CCF C</span>)</div>
-                
-                <div class="publication">87. <strong>Jianwei Zheng</strong>, Hong Qiu, Weiguo Sheng, Xi Yang*, and Hongchuan Yu. Kernel group sparse representation classifier with structural and non-convex constraints. <em>Neurocomputing</em>, 2018, 296: 1-11. (中科院二区, <span class="ccf-c">CCF C</span>, IF: 4.072)</div>
-                
-                <div class="publication">88. <strong>郑建炜</strong>, 朱文博, 王万良, 陈婉君*. 块对角Laplacian正则约束的平滑聚类算法. <em>计算机辅助设计与图形学学报</em>, 2018, 30(1): 116-123. (中文<span class="ccf-a">CCF A</span>)</div>
-            </div>
-            
-            <!-- 2017 -->
-            <div class="year-section">
-                <h3>2017</h3>
-                
-                <div class="publication">89. <strong>Jianwei Zheng</strong>, Ping Yang, Shanshan Fang, Cong Bai*. Block cluster based dictionary learning for image de-noising and de-blurring. <em>Pacific-Rim Conference on Multimedia (PCM 2017)</em>, Harbin, China, Sep 28-29, 2017: 818-826. (<span class="ccf-c">CCF C</span>)</div>
-                
-                <div class="publication">90. <strong>Jianwei Zheng</strong>, Ping Yang, Shengyong Chen*, Guojiang Shen, and Wanliang Wang. Iterative reconstrained group sparse face recognition with adaptive weights learning. <em>IEEE Transactions on Image Processing</em>, 2017, 26(5): 2408-2423. (IF: 5.072, JCR Q1, 中科院1区, <span class="ccf-a">CCF A</span>)</div>
-            </div>
-        </div>
-        
-        <!-- ============================================================
-             Team
-             ============================================================ -->
-        <div class="section" id="team">
-            <h2>Team</h2>
-            <div class="team-photo-gallery">
-                <img src="images/team_images/tuanjian.jpg" alt="Team Photo">
-            </div>
-        </div>
-        
-        <!-- ============================================================
-             Contact
-             ============================================================ -->
-        <div class="section" id="contact">
-            <h2>Contact</h2>
-            <div class="contact-card">
-                <div class="contact-item">
-                    <span class="icon">📧</span>
-                    <div>
-                        <strong>Email</strong><br>
-                        <a href="mailto:zjw@zjut.edu.cn">zjw@zjut.edu.cn</a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <span class="icon">🎓</span>
-                    <div>
-                        <strong>Google Scholar</strong><br>
-                        <a href="https://scholar.google.com/citations?user=X0wntOEAAAAJ" target="_blank">Jianwei Zheng's Profile</a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <span class="icon">💼</span>
-                    <div>
-                        <strong>For Collaborations & Inquiries</strong><br>
-                        Please contact us via email
-                    </div>
-                </div>
-            </div>
-        </div>
-        
+        <script>
+            function toggleBio() {
+                const bioContent = document.getElementById('piBioContent');
+                if (bioContent.style.display === 'none' || bioContent.style.display === '') {
+                    bioContent.style.display = 'block';
+                } else {
+                    bioContent.style.display = 'none';
+                }
+            }
+        </script>
     </div>
     
-    <!-- Footer -->
-    <div class="footer">
-        <p>&copy; 2025 Mount Huaguo Lab</p>
-        <p>All Rights Reserved</p>
+    <!-- Contact -->
+    <div class="section" id="contact">
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <p>We are always looking for highly motivated students to join our research group!</p>
+            <p>If you are interested in pursuing a Master's or Ph.D. degree in Computer Science, AI, or related fields, please feel free to reach out.</p>
+            <p><strong>Email:</strong> jjw@zjut.edu.cn</p>
+        </div>
     </div>
+</div>
+
 </body>
 </html>
-
